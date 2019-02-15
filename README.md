@@ -7,7 +7,7 @@ Required build version: go1.9 and up
 
 ## Warning
 
-Requires the binary pdfcpu to be in the $HOME/go/bin/ folder
+Requires the binary pdfcpu to be in the $HOME/go/bin/   folder
 
 ## Usage
 
