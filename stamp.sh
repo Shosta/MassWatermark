@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Add help value
+if [ "$1" == "-h" ] || [ $1 == "--help" ]; then
+  echo "Usage: stamp listOfNameFile pdfToStamp"
+  exit 0
+fi
+
+
 IFS=' '
 # Use an output folder for the stamped pdf files.
 outputFolder="./StampedPdf"
