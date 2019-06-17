@@ -64,8 +64,12 @@ done
 [ ! -d $outputFolder ] && mkdir -p $outputFolder
 while read -r prenom nom
 do
-  stamp="$prenom $nom"
-  outputFilePath="$outputFolder/$prenom-$nom.pdf"
+	stamp="$prenom $nom"
+    fileName=$(basename "$2")
+    outputFilePath="$outputFolder/$prenom-$nom-$fileName"
+	
+	eval $(echo $GOBIN/pdfcpu stamp -pages odd,even "'"$stamp, f:Courier, s:1, c: 0.75 0.75 0.75, r:45, o:0.5"'" $2 $outputFilePath)
+done < $1
 
   eval $(echo $GOBIN/pdfcpu stamp -pages odd,even "'"$stamp, f:Courier, s:1, c: 0.75 0.75 0.75, r:45, o:0.5"'" $pdfToStamp $outputFilePath)
 done < $nameList
