@@ -6,11 +6,18 @@ However that pdf file is confidential, so you want to make these people aware of
 
 ## Installation
 
-### Install Go 
+### Install Script
+Just launch the install script
+
+	./install.sh
+
+### Manual Install
+
+#### Install Go 
 Be sure that you have Go installed on your device as we are going to use a Go package.
 If you want to install Go on your device, you can follow this [link from the Go website](https://golang.org/doc/install).
 
-### Install the Pdf Library
+#### Install the Pdf Library
 The Go package we are going to use is [pdfcpu](https://pdfcpu.io/getting_started/getting_started).
 
 To run this package, the required build version is Go 1.9 and up.
