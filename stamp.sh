@@ -10,7 +10,7 @@ fi
 IFS=' '
 
 # Use an output folder for the stamped pdf files.
-if [ $3 == "" ]; then
+if [ "$3" == "" ]; then
 	outputFolder="./StampedPdf"
 else
 	outputFolder="$3/StampedPdf"
