@@ -39,3 +39,11 @@ chmod +x ./stamp.sh
 cp ./stamp.sh /usr/local/bin/stamp
 
 echo "'stamp' is available system-wide. Try 'stamp --help' to see how it is working."
+
+
+# Make the Stamp.sh file available system-wide.
+echo "Installing watermark system-wide (located in /usr/local/bin)..."
+chmod +x ./watermark.sh
+cp ./watermark.sh /usr/local/bin/watermark
+
+echo "'watermark' is available system-wide. Try 'watermark --help' to see how it is working."

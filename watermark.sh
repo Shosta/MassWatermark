@@ -2,7 +2,7 @@
 
 # Add help value
 if [ "$1" == "-h" ] || [ $1 == "--help" ]; then
-  echo "Usage: watermark listOfNameFile pdfToWatermark outputFolder"
+  echo "Usage: watermark nameList myConfidential.pdf outputFolder"
   exit 0
 fi
 
@@ -10,14 +10,12 @@ fi
 IFS=' '
 
 # Use an output folder for the stamped pdf files.
-if [ "$3" == "" ];
-then
+if [ "$3" == "" ]; then
 	outputFolder="./WatermarkedPdf"
 else
 	outputFolder="$3/WatermarkedPdf"
 fi
 
-echo $outputFolder
 # Create StampedPdf Directory if it does not exist.
 if [ ! -d $outputFolder ]; then 
     echo "Creating $outputFolder ..."
