@@ -16,7 +16,7 @@ usage()
 		[[-o|--output] <outputFolder>]
 		[[-l|--list] <names_list>]
 		[[-f|--file] <pdf_to_stamp>]
-  [-h|--help]"
+  		[-h|--help]"
 }
 
 # Separator to read the file.
@@ -40,7 +40,7 @@ while [ ! -z "$1" ]; do
     -l | --list)
       shift
       nameList=$1
-      if [ ! -d $nameList ]; then
+      if [ ! -f $nameList ]; then
         echo "${RED}\n$nameList does not exist, exit${NC}"
         exit
       fi
@@ -48,12 +48,12 @@ while [ ! -z "$1" ]; do
     -f | --file)
       shift
       pdfToStamp=$1
-      if [ ! -d $pdfToStamp ]; then
+      if [ ! -f $pdfToStamp ]; then
         echo "${RED}\n$pdfToStamp does not exist, exit${NC}"
         exit
       fi
       ;;
-    -h | --help | *)
+    -h | --help)
       usage
       exit
   esac
