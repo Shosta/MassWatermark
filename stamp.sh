@@ -1,8 +1,21 @@
 #!/bin/bash
 
+# Add help value
+if [ "$1" == "-h" ] || [ $1 == "--help" ]; then
+  echo "Usage: stamp listOfNameFile pdfToStamp outputFolder"
+  exit 0
+fi
+
+# Separator to read the file.
 IFS=' '
+
 # Use an output folder for the stamped pdf files.
-outputFolder="./StampedPdf"
+if [ $3 == "" ] then
+	outputFolder="./StampedPdf"
+else
+	outputFolder="$3/StampedPdf"
+fi
+
 # Create StampedPdf Directory if it does not exist.
 [ ! -d $outputFolder ] && mkdir -p $outputFolder
 while read -r prenom nom
