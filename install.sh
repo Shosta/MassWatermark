@@ -29,7 +29,7 @@ else
     # Install the pdfcpu package.
     echo "Installing 'pdfcpu'..."
     go get github.com/hhrutter/pdfcpu/cmd/...
-    go install $GOPATH/src/github.com/hhrutter/pdfcpu/cmd/pdfcpu
+    go install github.com/hhrutter/pdfcpu/cmd/pdfcpu
 fi
 
 
