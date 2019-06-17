@@ -17,7 +17,11 @@ else
 fi
 
 # Create StampedPdf Directory if it does not exist.
-[ ! -d $outputFolder ] && mkdir -p $outputFolder
+if [ ! -d $outputFolder ]; then 
+    echo "Creating $outputFolder ..."
+    eval $(mkdir -p $outputFolder)
+fi
+
 while read -r prenom nom
 do
 	stamp="$prenom $nom"
