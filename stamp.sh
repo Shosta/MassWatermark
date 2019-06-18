@@ -1,5 +1,10 @@
 #!/bin/bash
 
+#Define some colors
+RED='\033[0;31m'
+NC='\033[0m'
+
+#Default values
 nameList=$1
 pdfToStamp=$2
 outputFolder="./StampedPdf"
@@ -41,7 +46,7 @@ while [ ! -z "$1" ]; do
       shift
       nameList=$1
       if [ ! -f $nameList ]; then
-        echo "${RED}\n$nameList does not exist, exit${NC}"
+        echo -e "${RED}\n$nameList does not exist, exit${NC}"
         exit
       fi
       ;;
@@ -49,7 +54,7 @@ while [ ! -z "$1" ]; do
       shift
       pdfToStamp=$1
       if [ ! -f $pdfToStamp ]; then
-        echo "${RED}\n$pdfToStamp does not exist, exit${NC}"
+        echo -e "${RED}\n$pdfToStamp does not exist, exit${NC}"
         exit
       fi
       ;;
