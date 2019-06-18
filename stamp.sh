@@ -7,7 +7,7 @@ outputFolder="./StampedPdf"
 
 usage()
 {
-  echo "usage: stamp.sh
+  echo "usage: stamp
 	[[-o|--output] <outputFolder>]
 	[[-l|--list] <names_list>]
 	[[-f|--file] <pdf_to_stamp>]
@@ -61,6 +61,5 @@ do
   fileName=$(basename "$pdfToStamp")
   outputFilePath="$outputFolder/$prenom-$nom-$fileName"
 
-echo $GOBIN/pdfcpu stamp -pages odd,even "'"$stamp, f:Courier, s:1, c: 0.75 0.75 0.75, r:45, o:0.5"'" $pdfToStamp $outputFilePath
   eval $(echo $GOBIN/pdfcpu stamp -pages odd,even "'"$stamp, f:Courier, s:1, c: 0.75 0.75 0.75, r:45, o:0.5"'" $pdfToStamp $outputFilePath)
 done < $nameList
