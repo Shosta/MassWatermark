@@ -29,13 +29,21 @@ else
     # Install the pdfcpu package.
     echo "Installing 'pdfcpu'..."
     go get github.com/hhrutter/pdfcpu/cmd/...
-    go install $GOPATH/src/github.com/hhrutter/pdfcpu/cmd/pdfcpu
+    go install github.com/hhrutter/pdfcpu/cmd/pdfcpu
 fi
 
 
 # Make the Stamp.sh file available system-wide.
 echo "Installing stamp system-wide (located in /usr/local/bin)..."
 chmod +x ./stamp.sh
-cp ./stamp.sh /usr/local/bin/stamp
+sudo cp ./stamp.sh /usr/local/bin/stamp
 
 echo "'stamp' is available system-wide. Try 'stamp --help' to see how it is working."
+
+
+# Make the Stamp.sh file available system-wide.
+echo "Installing watermark system-wide (located in /usr/local/bin)..."
+chmod +x ./watermark.sh
+sudo cp ./watermark.sh /usr/local/bin/watermark
+
+echo "'watermark' is available system-wide. Try 'watermark --help' to see how it is working."
