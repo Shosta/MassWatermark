@@ -47,10 +47,10 @@ You can launch the Shell script directly from the directory where it is located 
 
 Or you can make the script available system-wide.
 
-You just have to add the script to the `/usr/local/bin` to make it available system-wide : 
+You just have to add a symbolink link to the script to the `/usr/local/bin` to make it available system-wide : 
 
-	cp /path/to/stamp.sh /usr/local/bin/stamp
-	cp /path/to/watermark.sh /usr/local/bin/watermark
+	ln -s /path/to/stamp.sh /usr/local/bin/stamp
+	ln -s /path/to/watermark.sh /usr/local/bin/watermark
 
 So you can now use it system-wide through : 
 
