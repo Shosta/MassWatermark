@@ -33,10 +33,15 @@ else
 fi
 
 
+# Build current foldoer's absolute path.
+absolutePath=$(eval pwd)
+stampScriptAbsolutePath=$absolutePath"/stamp.sh"
+watermarkScriptAbsolutePath=$absolutePath"/watermark.sh"
+
 # Make the Stamp.sh file available system-wide.
 echo "Installing stamp system-wide (located in /usr/local/bin)..."
 chmod +x ./stamp.sh
-ln -s ./stamp.sh /usr/local/bin/stamp
+ln -s watermarkScriptAbsolutePath /usr/local/bin/stamp
 
 echo "'stamp' is available system-wide. Try 'stamp --help' to see how it is working."
 
@@ -44,6 +49,6 @@ echo "'stamp' is available system-wide. Try 'stamp --help' to see how it is work
 # Make the Stamp.sh file available system-wide.
 echo "Installing watermark system-wide (located in /usr/local/bin)..."
 chmod +x ./watermark.sh
-ln -s ./watermark.sh /usr/local/bin/watermark
+ln -s $watermarkScriptAbsolutePath /usr/local/bin/watermark
 
 echo "'watermark' is available system-wide. Try 'watermark --help' to see how it is working."
